@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Kamil Błachnio{% endblock %}
+
+{% block content %}
+
+<style>
+   
+    .choose-file { padding: 20px; }
+</style>
+
+<h2 align="left">Wczytaj obrazek do rozpoznania:</h2>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="choose-file" >
+        <input type="file" name="uploaded_file" required>
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Otwórz" style="float:left">
+
+</form>
+
+{% endblock %}

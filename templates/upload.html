@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Orzeł{% endblock %}
+
+{% block content %}
+
+<h2>Detekcja wykazała...</h2>
+
+<div>
+{% if success %}
+    <p>Poprawnie odebrano obrazek.</p>
+
+    <div style="display: inline-block;">
+        <img class="img-responsive" src="{{ image2 }}">
+    </div>
+{% else %}
+    <p>{{ error_msg }}</p>
+{% endif %}
+</div>
+
+<br>
+
+<div>
+    <a class="btn btn-warning" href="/">Powrót</a>
+</div>
+
+{% endblock %}
